@@ -34,7 +34,7 @@ Note: need to change descriptions and equations to use set notation.
   label   = none,
 ]{
   % There's a 0-width column here so that columns can be moved easily
-  colspec = {X[0,l] >{\bfseries}X[0.5,l] c c X},
+  colspec = {X[0,l] >{\bfseries}X[0.5,l] c Q[m,c] X[l,t]},
   rowhead = 1,
   row{1}  = {gray9}}
     \toprule
@@ -46,22 +46,22 @@ Note: need to change descriptions and equations to use set notation.
         & \boldred{S}tate Space
         & $S$
         & -
-        & Possible values taken by the Markov chain
+        & Possible values taken by the Markov chain.
     \\\midrule
         & Transition matrix
         & $P$
         & -
-        & A matrix containing the probabilities of going between state spaces, rows being "old" and columns being "new" spaces, all $1$-step
+        & A matrix containing the probabilities of going between state spaces, rows being "old" and columns being "new" spaces, all $1$-step.
     \\\midrule
         & Transition probability
         & $P_{ij}^n$
-        & $\mathds{P}(X_n=j\mid X_0=i)$
-        & A probability of Markov Chain going from state $i$ to state $j$ in $n$-steps
+        & $\begin{aligned}[t]&\mathds P(X_n=j\mid X_0=i)\\=&\mathds P_i(X_n=j)\end{aligned}$
+        & A probability of Markov Chain going from state $i$ to state $j$ in $n$-steps.
     \\\midrule
         & Initial distribution
         & $\lambda$
         & -
-        & A vector containing distribution of the first state of the chain
+        & A vector containing the distribution of the first state of the chain.
     \\\midrule
         & Initial probability of state $i$
         & $\lambda_i$
@@ -71,57 +71,57 @@ Note: need to change descriptions and equations to use set notation.
         & Perio\boldred{d} of a state
         & $d_i$
         & $\gcd\{n\in\mathds{N}\mid (P^n)_{ii}>0\}$
-        & Greatest Common divisor of all loops leading from state $i$ to $i$
+        & Greatest Common divisor of all loops leading from state $i$ to $i$.
     \\\midrule
         & First \boldred{h}itting time
         & $H_j/H_A$
         & $\min\{n\in\mathds N_0\mid X_n = j\}$
-        & Number of steps until state $j$ is hit. Is $0$ if the start point is state $j$ or the set is $\varnothing$. (Similarly for set $A$)
+        & Number of steps until state $j$ is hit. Is $0$ if the start point is state $j$ or the set is $\varnothing$.\newline(Similarly for set $A$)
     \\\midrule
         & \boldred{H}itting probability
         & $h_{ij}/h_{iA}$
-        & $\sum^\infty_{n=1}\mathds P_i(H_A=n)$
-        & Probability of reaching state $j$ from state $i$. (Similarly for set $A$)
+        & $\displaystyle\sum^\infty_{n=1}\mathds P_i(H_A=n)$
+        & Probability of reaching state $j$ from state $i$.\newline(Similarly for set $A$)
     \\\midrule
         & \boldred{E}xpected hitting \boldred{t}ime
         & $\eta_{ij}/\eta_{iA}$
-        & $\begin{aligned}[t]&\mathds E[H_A\mid X_0=i]\\=&\textstyle\sum^\infty_{n=1}n\mathds P_i(H_A=n)\end{aligned}$
-        & Expected number of steps until state $j$ is reached from state $i$ (Similarly for set $A$)
+        & $\begin{aligned}[t]&\mathds E_i[H_A]\\=&\sum^\infty_{n=1}n\mathds P_i(H_A=n)\end{aligned}$
+        & Expected number of steps until state $j$ is reached from state $i$.\newline(Similarly for set $A$)
     \\\midrule
         & First return \boldred{t}ime
         & $T_i$
         & $\min\{n\in\mathds{N}\mid X_n=i\}$
-        & Number of steps until state $i$ loops on itself
+        & Number of steps until state $i$ loops on itself.
     \\\midrule
         & Return probability
         & $f_i$
-        & $\begin{aligned}[t]&\mathds{P}(T_i<\infty\mid X_0=i)\\=&\textstyle\sum_{j\in S}P_{ij}h_{ji}\end{aligned}$
+        & $\begin{aligned}[t]&\mathds P_i(T_i<\infty)\\=&\sum_{j\in S}P_{ij}h_{ji}\end{aligned}$
         & $h_{ii}$, probability of chain returning back to state $i$, from $i$.
     \\\midrule
         & Expected return time
         & $m_i$
-        & $\mathds E[T_i\mid X_0=i]$
+        & $\mathds E_i[T_i]$
         & $\eta_{ii}$, expected number of steps until state $i$ loops on itself.
     \\\midrule
         & Number of \boldred{v}isits
         & $V_j/V_A$
-        & $\sum^\infty_{k=0}\mathds{1}_{\{X_k=i\}}$
-        & Number of visits to state $j$/set $A$
+        & $\displaystyle\sum^\infty_{n=0}\mathds{1}_{\{X_n=i\}}$
+        & Number of visits to state $j$/set $A$.
     \\\midrule
         & \boldred{E}xpected number of \boldred{v}isits
         & $\gamma_j^i$
-        & -
+        & $\mathds E_i\left[\displaystyle\sum^{T_j-1}_{n=0}\mathds1(X_n=j)\right]$
         & Expected number of visits to state $j$ before chain returns to state $i$
     \\\midrule
         & Set of \boldred{t}ransient states
         & $\mathcal{T}$
         & -
-        & Subset of $S$, containing all transient states
+        & Subset of $S$, containing all transient states.
     \\\midrule
         & Invariant \boldred{m}easure
         & $\mu$
         & -
-        & A vector of positive entries, describing the measure, or "weight" of each state at every step of the chain. Has a property of $\mu P=\mu$
+        & A vector of positive entries, describing the measure, or "weight" of each state at every step of the chain.\newline Has a property of $\mu P=\mu$.
     \\\midrule
         & Invariant distribution
         & $\pi$
@@ -130,13 +130,13 @@ Note: need to change descriptions and equations to use set notation.
     \\\midrule
         & Long term transition matrix
         & $\Pi$
-        & -
-        & $\Pi = \lim_{n \to \infty} P^n$, with all rows equal to $\pi$. Describes the behaviour of the chain after arbitrarily many steps. Not applicable to every Markov Chain
+        & $\displaystyle\lim_{n \to \infty} P^n$
+        & All rows are equal to $\pi$. Describes the behaviour of the chain after arbitrarily many steps.\newline Not applicable to every Markov Chain.
     \\\midrule
         & Graph
         & $G=(V, E)$
         & -
-        & Graph $G$, where $V$ is a set of vertices and $E\subset S \times S$, set of all edges. All graphs in this module are connected and weighted
+        & Graph $G$, where $V$ is a set of vertices and $E\subset S \times S$, set of all edges.\newline All graphs in this module are connected and weighted.
     \\\bottomrule
 \end{longtblr}
 
