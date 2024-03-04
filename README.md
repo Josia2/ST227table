@@ -1,4 +1,5 @@
-This is a table with all symbols from ST227 module (forked from [DenysMelnyk6/ST227table](https://github.com/DenysMelnyk6/ST227table)), reformatted in LaTeX with a different layout.
+This is a table with all symbols from ST227 module (forked from [DenysMelnyk6/ST227table](https://github.com/DenysMelnyk6/ST227table)), reformatted in LaTeX with a different layout
+for hopefully more ease in customization and interpretation.
 
 Note some rows are removed and the equations column is not yet completed.
 
