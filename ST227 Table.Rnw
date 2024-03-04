@@ -31,9 +31,22 @@
 
 \maketitle
 
-%\section{JOSAI IS TSOI DUMB}
+To-do: Need to change descriptions and unify set notation.
 
-Note: need to change descriptions and equations to use set notation.
+%\section{JOSAI IS TSOI DUMB}
+\section*{Notation}
+
+Note that the following table uses the abbreviation:
+
+$$\begin{aligned}
+    \mathds P_i(\cdot) &= \mathds P(\cdot\mid X_0=i)\\
+    \mathds E_i(\cdot) &= \mathds E(\cdot\mid X_0=i)
+\end{aligned}$$
+\newline
+
+\par\centering\noindent\rule{0.85\textwidth}{0.4pt}
+
+
 % Read this https://ctan.math.illinois.edu/macros/latex/contrib/tabularray/tabularray.pdf
 \begin{longtblr}[
   caption = {ST227 Definitions},
@@ -144,8 +157,8 @@ Note: need to change descriptions and equations to use set notation.
         & All rows are equal to $\pi$. Describes the behaviour of the chain after arbitrarily many steps.\newline Not applicable to every Markov Chain.
     \\\midrule
         & Graph
-        & G=(V, E)
-        & -
+        & G
+        & (V,E)
         & Graph $G$, where $V$ is a set of vertices and $E\subset S \times S$, set of all edges.\newline All graphs in this module are connected and weighted.
     \\\bottomrule
 \end{longtblr}
