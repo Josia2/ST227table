@@ -39,7 +39,8 @@ Note: need to change descriptions and equations to use set notation.
   caption = {ST227 Definitions},
   label   = none,
   theme   = fancy,
-  remark{Note} = {A trick to memorize the \boldred{E}xpected \boldred{h}itting time $\eta$ is that it looks like a deformed "$h$".\newline Similarly for the \boldred{E}xpected number of \boldred{v}isits $\gamma$ with "$v$".}
+  remark{Note} = {A trick to memorize the \boldred{E}xpected \boldred{h}itting time $\eta$ is that it looks like a deformed "$h$".%
+  \newline Similarly for the \boldred{E}xpected number of \boldred{v}isits $\gamma$ with "$v$".}
 ]{
   % There's a 0-width column here so that columns can be moved easily
   colspec = {X[0,l,t] >{\bfseries}X[0.5,l,t] Q[c,m,mode=dmath] Q[c,m,mode=dmath] X[l,t]},
@@ -120,7 +121,7 @@ Note: need to change descriptions and equations to use set notation.
         & \boldred{E}xpected number of \boldred{v}isits
         & \gamma_j^i
         & \mathds E_i\left[\sum^{T_j-1}_{n=0}\mathds1(X_n=j)\right]
-        & Expected number of visits to state $j$ before chain returns to state $i$
+        & Expected number of visits to state $j$ before chain returns to state $i$.
     \\\midrule
         & Set of \boldred{t}ransient states
         & \mathcal{T}
